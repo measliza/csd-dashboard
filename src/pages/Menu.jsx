@@ -1,5 +1,5 @@
 import React from 'react'
-import Aside from '../components/aside'
+import Aside from '../components/Aside'
 import MenuHeader from '../components/Menu/MenuHeader'
 import MenuDashboard from '../components/Menu/MenuDashboard'
 

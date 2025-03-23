@@ -1,5 +1,5 @@
 import React from 'react'
-import Aside from '../components/aside'
+import Aside from '../components/Aside'
 import HomeHeader from '../components/Home/HomeHeader'
 
 const Home = () => {
