@@ -13,7 +13,9 @@ const Aside = () => {
 
   return (
     <aside id="application-sidebar-brand"
-				class="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full transform hidden xl:block xl:translate-x-0 xl:end-auto xl:bottom-0 fixed top-0 with-vertical h-screen z-[999] flex-shrink-0 border-r w-[270px] border-gray-400 bg-white left-sidebar transition-all duration-300 overflow-y-auto" >
+            class="fixed top-0 left-0 h-screen z-[999] flex flex-col w-[270px] border-r border-gray-400 bg-white transition-all duration-300"
+				// class="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full transform hidden xl:block xl:translate-x-0 xl:end-auto xl:bottom-0 fixed top-0 with-vertical h-screen z-[999] flex-shrink-0 border-r w-[270px] border-gray-400 bg-white left-sidebar transition-all duration-300 overflow-y-auto"
+                >
         <div class="p-5" >
 
         <a href="../" class="text-nowrap flex items-center gap-1">
@@ -25,7 +27,10 @@ const Aside = () => {
         </a>
 
         </div>
-            <div class="scroll-sidebar" data-simplebar="">
+            <div
+                // class="scroll-sidebar" data-simplebar=""
+                class="flex-1 overflow-y-auto px-6 mt-1"
+            >
                 <div class="px-6 mt-1" >
                     <nav class=" w-full flex flex-col sidebar-nav">
                         <ul  id="sidebarnav" class="text-gray-600 text-sm">
@@ -136,10 +141,10 @@ const Aside = () => {
                 </div>
             </div>
 
-        <div class="m-6 relative">
+        <div class="m-6 border-t">
             <div class="bg-blue-500 p-5 rounded-md ">
                 <div className='flex items-center gap-2'>
-                    <img src={profile} class="size-10"  alt="profile" />
+                    <img src={profile} class="size-10" alt="profile" />
                     <h5 class="text-sm font-light text-gray-700 ">leang vakhim</h5>
                 </div>
                 <button
