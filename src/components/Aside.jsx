@@ -8,7 +8,6 @@ const Aside = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // You can also clear any auth storage here if needed
     navigate('/login');
   };
 
