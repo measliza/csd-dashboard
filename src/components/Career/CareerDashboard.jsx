@@ -1,80 +1,64 @@
-import React, { useEffect, useState } from 'react'
-// import photo1 from "../../img/profile.svg"
-import photo1 from "../../img/1.jpg"
-import photo2 from "../../img/2.jpg"
-import photo3 from "../../img/3.jpg"
-import photo4 from "../../img/4.jpg"
+import React, {useState} from 'react'
 
-const FacultyDashboard = () => {
+const CareerDashboard = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
-    const [facultyItems, setFacultyItems] = useState([
+    const [careerItems, setCareerItems] = useState([
         {
             id: 1,
-            photo: photo1,
-            name: 'User 1',
-            position: 'N/A',
+            title: 'Career 1',
+            poston: '20 Mar 2025',
             language: 'English',
             display: true
         },
         {
             id: 2,
-            photo: photo2,
-            name: 'User 2',
-            position: 'N/A',
+            title: 'Career 2',
+            poston: '21 Mar 2025',
             language: 'Khmer',
             display: false
         },
         {
             id: 3,
-            photo: photo3,
-            name: 'User 3',
-            position: 'N/A',
-            language: 'English',
-            display: true
-        },
-        {
-            id: 4,
-            photo: photo4,
-            name: 'User 4',
-            position: 'N/A',
+            title: 'Career 3',
+            poston: '22 Mar 2025',
             language: 'English',
             display: true
         }
     ]);
 
     const moveItem = (index, direction) => {
-        const newItems = [...facultyItems];
+        const newItems = [...careerItems];
         const targetIndex = direction === 'up' ? index - 1 : index + 1;
 
         if (targetIndex < 0 || targetIndex >= newItems.length) return;
 
         [newItems[index], newItems[targetIndex]] = [newItems[targetIndex], newItems[index]];
-        setFacultyItems(newItems);
+        setCareerItems(newItems);
     };
 
     const duplicateItem = (index) => {
-        const itemToDuplicate = facultyItems[index];
+    const itemToDuplicate = careerItems[index];
 
         const baseTitle = itemToDuplicate.title.replace(/\s\(copy(?:\s\d+)?\)$/i, '');
 
-        const copyCount = facultyItems.filter(item =>
-            item.title.startsWith(baseTitle + ' (copy')
-        ).length;
+    const copyCount = careerItems.filter(item =>
+        item.title.startsWith(baseTitle + ' (copy')
+    ).length;
 
-        const newTitle =
-            copyCount === 0
-                ? `${baseTitle} (copy)`
-                : `${baseTitle} (copy ${copyCount})`;
+    const newTitle =
+        copyCount === 0
+            ? `${baseTitle} (copy)`
+            : `${baseTitle} (copy ${copyCount})`;
 
-        const newItem = {
-            ...itemToDuplicate,
-            id: Date.now(),
-            title: newTitle
-        };
+    const newItem = {
+        ...itemToDuplicate,
+        id: Date.now(),
+        title: newTitle
+    };
 
-        const newItems = [...facultyItems];
+    const newItems = [...careerItems];
         newItems.splice(index + 1, 0, newItem);
-        setFacultyItems(newItems);
+        setCareerItems(newItems);
     };
 
     return (
@@ -83,13 +67,10 @@ const FacultyDashboard = () => {
                 <thead className="text-xs text-gray-700  uppercase bg-gray-50 ">
                     <tr>
                         <th scope="col" className="px-6 py-3">
-                            Photo
+                            Title
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Full name
-                        </th>
-                        <th scope="col" className="px-6 py-3">
-                            Position
+                            Post on
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Language
@@ -103,23 +84,19 @@ const FacultyDashboard = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {facultyItems.map((item, index) => (
+                    {careerItems.map((item, index) => (
                         <tr key={item.id} className="odd:bg-white even:bg-gray-50 border">
-                            <td
-                                scope="row"
-                                className="px-6 py-4"
-                                >
-                                <img src={item.photo} alt="" className='size-12 rounded-full'/>
-                            </td>
-                            <td className="px-6 py-4">{item.name}</td>
-                            <td className="px-6 py-4">{item.position}</td>
+                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                {item.title}
+                            </th>
+                            <td className="px-6 py-4">{item.poston}</td>
                             <td className="px-6 py-4">{item.language}</td>
                             <td className="px-6 py-4">
                                 <span className={`${item.display ? 'bg-blue-100 text-blue-800' : 'bg-red-100 text-red-800'} text-xs font-medium me-2 px-2.5 py-0.5 rounded-xl`}>
                                     {item.display ? 'Enable' : 'Disable'}
                                 </span>
                             </td>
-                            <td className="px-2 py-6 flex gap-2 items-center relative">
+                            <td className="px-6 py-4 flex gap-2 items-center relative">
                                 <a href="#" onClick={() => moveItem(index, 'up')} className="font-medium text-gray-900 hover:text-blue-500 hover:underline">
                                     <i className="ti ti-chevron-up text-xl"></i>
                                 </a> |
@@ -161,4 +138,4 @@ const FacultyDashboard = () => {
     )
 }
 
-export default FacultyDashboard
+export default CareerDashboard

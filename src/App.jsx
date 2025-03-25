@@ -6,6 +6,9 @@ import Login from './pages/Login';
 import Image from './pages/Image';
 import Page from './pages/Page';
 import Faculty from './pages/Faculty';
+import Event from './pages/Event';
+import New from './pages/New';
+import Career from './pages/Career';
 
 function App() {
 
@@ -16,6 +19,10 @@ function App() {
         <Route path='/menu' element={<Menu/>} />
         <Route path='/page' element={<Page/>} />
         <Route path='/faculty' element={<Faculty/>} />
+        <Route path='/event' element={<Event/>} />
+        <Route path='/new' element={<New/>} />
+        <Route path='/career' element={<Career/>} />
+
         <Route path='/image' element={<Image/>} />
         <Route path='/login' element={<Login/>} />
       </Routes>

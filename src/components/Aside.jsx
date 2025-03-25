@@ -78,31 +78,48 @@ const Aside = () => {
                                     <i class="ti ti-user text-xl"></i>
                                     <span>Faculty</span>
                                 </Link>
-                                {/* <a class="sidebar-link gap-3 py-2 px-3 rounded-md  w-full flex items-center hover:text-blue-600 hover:bg-blue-500" href="#">
-                                    <i class="ti ti-user text-xl"></i>
-                                    <span>Faculty</span>
-                                </a> */}
                             </li>
 
                             <li class="sidebar-item mb-2">
-                                <a class="sidebar-link gap-3 py-2 px-3  rounded-md  w-full flex items-center hover:text-blue-600 hover:bg-blue-500" href="#">
-                                    <i class="ti ti-speakerphone  text-xl"></i>
+                                <Link
+                                    to="/event"
+                                    className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
+                                        location.pathname === '/event'
+                                        ? 'bg-blue-600 text-white'
+                                        : 'text-gray-700 hover:bg-gray-100'
+                                    }`}
+                                    >
+                                    <i class="ti ti-speakerphone text-xl"></i>
                                     <span>Event</span>
-                                </a>
+                                </Link>
                             </li>
 
                             <li class="sidebar-item mb-2">
-                                <a class="sidebar-link gap-3 py-2 px-3  rounded-md  w-full flex items-center hover:text-blue-600 hover:bg-blue-500" href="#">
-                                    <i class="ti ti-news  text-xl"></i>
+                                <Link
+                                    to="/new"
+                                    className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
+                                        location.pathname === '/new'
+                                        ? 'bg-blue-600 text-white'
+                                        : 'text-gray-700 hover:bg-gray-100'
+                                    }`}
+                                    >
+                                    <i class="ti ti-news text-xl"></i>
                                     <span>New</span>
-                                </a>
+                                </Link>
                             </li>
 
                             <li class="sidebar-item mb-2">
-                                <a class="sidebar-link gap-3 py-2 px-3  rounded-md  w-full flex items-center hover:text-blue-600 hover:bg-blue-500" href="#">
-                                    <i class="ti ti-target-arrow  text-xl"></i>
+                                <Link
+                                    to="/career"
+                                    className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
+                                        location.pathname === '/career'
+                                        ? 'bg-blue-600 text-white'
+                                        : 'text-gray-700 hover:bg-gray-100'
+                                    }`}
+                                    >
+                                    <i class="ti ti-target-arrow text-xl"></i>
                                     <span>Career</span>
-                                </a>
+                                </Link>
                             </li>
 
                             <li class="sidebar-item mb-2">
