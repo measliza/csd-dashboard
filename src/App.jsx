@@ -4,6 +4,8 @@ import Menu from './pages/Menu';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import Login from './pages/Login';
 import Image from './pages/Image';
+import Page from './pages/Page';
+import Faculty from './pages/Faculty';
 
 function App() {
 
@@ -12,6 +14,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate to="/menu"/>}/>
         <Route path='/menu' element={<Menu/>} />
+        <Route path='/page' element={<Page/>} />
+        <Route path='/faculty' element={<Faculty/>} />
         <Route path='/image' element={<Image/>} />
         <Route path='/login' element={<Login/>} />
       </Routes>

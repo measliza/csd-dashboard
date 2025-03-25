@@ -1,47 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const MenuDashboard = () => {
+const PageDashboard = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
-    const [menuItems, setMenuItems] = useState([
+    const [pageItems, setPageItems] = useState([
         {
             id: 1,
-            title: 'Home',
-            page: 'Home Page',
+            title: 'Home Page',
+            page: 'Home',
             language: 'English',
             display: true
         },
         {
             id: 2,
-            title: 'About',
-            page: 'About Page',
+            title: 'About Page',
+            page: 'About',
             language: 'Khmer',
             display: false
         },
         {
             id: 3,
-            title: 'Contact',
-            page: 'Contact Page',
+            title: 'Contact Page',
+            page: '',
             language: 'English',
             display: true
         }
     ]);
 
-    const moveItem = (index, direction) => {
-        const newItems = [...menuItems];
-        const targetIndex = direction === 'up' ? index - 1 : index + 1;
-
-        if (targetIndex < 0 || targetIndex >= newItems.length) return;
-
-        [newItems[index], newItems[targetIndex]] = [newItems[targetIndex], newItems[index]];
-        setMenuItems(newItems);
-    };
-
     const duplicateItem = (index) => {
-        const itemToDuplicate = menuItems[index];
+        const itemToDuplicate = pageItems[index];
 
         const baseTitle = itemToDuplicate.title.replace(/\s\(copy(?:\s\d+)?\)$/i, '');
 
-        const copyCount = menuItems.filter(item =>
+        const copyCount = pageItems.filter(item =>
             item.title.startsWith(baseTitle + ' (copy')
         ).length;
 
@@ -56,9 +46,9 @@ const MenuDashboard = () => {
             title: newTitle
         };
 
-        const newItems = [...menuItems];
+        const newItems = [...pageItems];
         newItems.splice(index + 1, 0, newItem);
-        setMenuItems(newItems);
+        setPageItems(newItems);
     };
 
     return (
@@ -70,7 +60,7 @@ const MenuDashboard = () => {
                                 Title
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Page
+                                Menu
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Language
@@ -84,7 +74,7 @@ const MenuDashboard = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {menuItems.map((item, index) => (
+                        {pageItems.map((item, index) => (
                             <tr key={item.id} className="odd:bg-white even:bg-gray-50 border">
                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                     {item.title}
@@ -97,12 +87,6 @@ const MenuDashboard = () => {
                                     </span>
                                 </td>
                                 <td className="px-6 py-4 flex gap-2 items-center relative">
-                                    <a href="#" onClick={() => moveItem(index, 'up')} className="font-medium text-gray-900 hover:text-blue-500 hover:underline">
-                                        <i className="ti ti-chevron-up text-xl"></i>
-                                    </a> |
-                                    <a href="#" onClick={() => moveItem(index, 'down')} className="font-medium text-gray-900 hover:text-blue-500 hover:underline">
-                                        <i className="ti ti-chevron-down text-xl"></i>
-                                    </a> |
                                     <div className="relative">
                                         <button
                                             onClick={() => setActiveDropdown(activeDropdown === item.id ? null : item.id)}
@@ -136,6 +120,6 @@ const MenuDashboard = () => {
                 </table>
             </div>
         )
-    }
+}
 
-export default MenuDashboard
+export default PageDashboard
