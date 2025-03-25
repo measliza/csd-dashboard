@@ -9,6 +9,9 @@ import Faculty from './pages/Faculty';
 import Event from './pages/Event';
 import New from './pages/New';
 import Career from './pages/Career';
+import Scholarship from './pages/scholarship';
+import Research from './pages/Research';
+import Researchlab from './pages/Researchlab';
 
 function App() {
 
@@ -22,6 +25,9 @@ function App() {
         <Route path='/event' element={<Event/>} />
         <Route path='/new' element={<New/>} />
         <Route path='/career' element={<Career/>} />
+        <Route path='/scholarship' element={<Scholarship/>} />
+        <Route path='/research' element={<Research/>} />
+        <Route path='/researchlab' element={<Researchlab/>} />
 
         <Route path='/image' element={<Image/>} />
         <Route path='/login' element={<Login/>} />

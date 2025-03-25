@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 
-const CareerHeader = () => {
+const ResearchlabHeader = () => {
     //   const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
@@ -69,9 +69,9 @@ const CareerHeader = () => {
                     <button
                     //   onClick={() => setIsModalOpen(true)}
                     className="bg-blue-600 text-white font-medium px-4 py-2 rounded hover:bg-blue-700"
-                    aria-current="career"
+                    aria-current="researchlab"
                     >
-                    Add Career
+                    Add Research Lab
                     </button>
                 </div>
             </nav>
@@ -79,4 +79,4 @@ const CareerHeader = () => {
     )
 }
 
-export default CareerHeader
+export default ResearchlabHeader

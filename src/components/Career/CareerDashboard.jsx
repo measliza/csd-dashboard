@@ -6,21 +6,21 @@ const CareerDashboard = () => {
         {
             id: 1,
             title: 'Career 1',
-            poston: '20 Mar 2025',
+            poston: '12 Mar 2025',
             language: 'English',
             display: true
         },
         {
             id: 2,
             title: 'Career 2',
-            poston: '21 Mar 2025',
+            poston: '14 Mar 2025',
             language: 'Khmer',
             display: false
         },
         {
             id: 3,
             title: 'Career 3',
-            poston: '22 Mar 2025',
+            poston: '16 Mar 2025',
             language: 'English',
             display: true
         }
@@ -37,26 +37,26 @@ const CareerDashboard = () => {
     };
 
     const duplicateItem = (index) => {
-    const itemToDuplicate = careerItems[index];
+        const itemToDuplicate = careerItems[index];
 
         const baseTitle = itemToDuplicate.title.replace(/\s\(copy(?:\s\d+)?\)$/i, '');
 
-    const copyCount = careerItems.filter(item =>
-        item.title.startsWith(baseTitle + ' (copy')
-    ).length;
+        const copyCount = careerItems.filter(item =>
+            item.title.startsWith(baseTitle + ' (copy')
+        ).length;
 
-    const newTitle =
-        copyCount === 0
-            ? `${baseTitle} (copy)`
-            : `${baseTitle} (copy ${copyCount})`;
+        const newTitle =
+            copyCount === 0
+                ? `${baseTitle} (copy)`
+                : `${baseTitle} (copy ${copyCount})`;
 
-    const newItem = {
-        ...itemToDuplicate,
-        id: Date.now(),
-        title: newTitle
-    };
+        const newItem = {
+            ...itemToDuplicate,
+            id: Date.now(),
+            title: newTitle
+        };
 
-    const newItems = [...careerItems];
+        const newItems = [...careerItems];
         newItems.splice(index + 1, 0, newItem);
         setCareerItems(newItems);
     };
@@ -70,7 +70,7 @@ const CareerDashboard = () => {
                             Title
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Post on
+                            Post On
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Language
@@ -97,10 +97,10 @@ const CareerDashboard = () => {
                                 </span>
                             </td>
                             <td className="px-6 py-4 flex gap-2 items-center relative">
-                                <a href="#" onClick={() => moveItem(index, 'up')} className="font-medium text-gray-900 hover:text-blue-500 hover:underline">
+                                <a onClick={() => moveItem(index, 'up')} className="cursor-pointer font-medium text-gray-900 hover:text-blue-500 hover:underline">
                                     <i className="ti ti-chevron-up text-xl"></i>
                                 </a> |
-                                <a href="#" onClick={() => moveItem(index, 'down')} className="font-medium text-gray-900 hover:text-blue-500 hover:underline">
+                                <a onClick={() => moveItem(index, 'down')} className="cursor-pointer font-medium text-gray-900 hover:text-blue-500 hover:underline">
                                     <i className="ti ti-chevron-down text-xl"></i>
                                 </a> |
                                 <div className="relative">

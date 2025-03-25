@@ -1,47 +1,50 @@
 import React, {useState} from 'react'
 
-const NewDashboard = () => {
+const ScholarshipDashboard = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
-    const [new_Items, setNew_Items] = useState([
+    const [scholarshipItems, setScholarshipItems] = useState([
         {
             id: 1,
-            title: 'New 1',
-            poston: '12 Mar 2025',
+            sponsor: 'Woori',
+            title: 'Woori Sponsor',
+            deadline: '12 Mar 2025',
             language: 'English',
             display: true
         },
         {
             id: 2,
-            title: 'New 2',
-            poston: '14 Mar 2025',
+            sponsor: 'ABA',
+            title: 'ABA Sponsor',
+            deadline: '14 Mar 2025',
             language: 'Khmer',
             display: false
         },
         {
             id: 3,
-            title: 'New 3',
-            poston: '16 Mar 2025',
+            sponsor: 'Canadia',
+            title: 'Canadia Sponsor',
+            deadline: '16 Mar 2025',
             language: 'English',
             display: true
         }
     ]);
 
     const moveItem = (index, direction) => {
-        const newItems = [...new_Items];
+        const newItems = [...scholarshipItems];
         const targetIndex = direction === 'up' ? index - 1 : index + 1;
 
         if (targetIndex < 0 || targetIndex >= newItems.length) return;
 
         [newItems[index], newItems[targetIndex]] = [newItems[targetIndex], newItems[index]];
-        setNew_Items(newItems);
+        setScholarshipItems(newItems);
     };
 
     const duplicateItem = (index) => {
-        const itemToDuplicate = new_Items[index];
+        const itemToDuplicate = scholarshipItems[index];
 
         const baseTitle = itemToDuplicate.title.replace(/\s\(copy(?:\s\d+)?\)$/i, '');
 
-        const copyCount = new_Items.filter(item =>
+        const copyCount = scholarshipItems.filter(item =>
             item.title.startsWith(baseTitle + ' (copy')
         ).length;
 
@@ -56,9 +59,9 @@ const NewDashboard = () => {
             title: newTitle
         };
 
-        const newItems = [...new_Items];
+        const newItems = [...scholarshipItems];
         newItems.splice(index + 1, 0, newItem);
-        setNew_Items(newItems);
+        setScholarshipItems(newItems);
     };
 
     return (
@@ -67,10 +70,13 @@ const NewDashboard = () => {
                 <thead className="text-xs text-gray-700  uppercase bg-gray-50 ">
                     <tr>
                         <th scope="col" className="px-6 py-3">
-                            Title
+                            Sponsor
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Post On
+                            Name
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            Deadline
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Language
@@ -84,12 +90,13 @@ const NewDashboard = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {new_Items.map((item, index) => (
+                    {scholarshipItems.map((item, index) => (
                         <tr key={item.id} className="odd:bg-white even:bg-gray-50 border">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                {item.title}
+                                {item.sponsor}
                             </th>
-                            <td className="px-6 py-4">{item.poston}</td>
+                            <td className="px-6 py-4">{item.title}</td>
+                            <td className="px-6 py-4">{item.deadline}</td>
                             <td className="px-6 py-4">{item.language}</td>
                             <td className="px-6 py-4">
                                 <span className={`${item.display ? 'bg-blue-100 text-blue-800' : 'bg-red-100 text-red-800'} text-xs font-medium me-2 px-2.5 py-0.5 rounded-xl`}>
@@ -138,4 +145,4 @@ const NewDashboard = () => {
     )
 }
 
-export default NewDashboard
+export default ScholarshipDashboard

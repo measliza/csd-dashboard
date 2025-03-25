@@ -1,47 +1,47 @@
 import React, {useState} from 'react'
 
-const NewDashboard = () => {
+const ResearchDashboard = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
-    const [new_Items, setNew_Items] = useState([
+    const [researchItems, setResearchItems] = useState([
         {
             id: 1,
-            title: 'New 1',
-            poston: '12 Mar 2025',
+            lead: 'Dr. Heng Sovannrith',
+            title: 'Web server',
             language: 'English',
             display: true
         },
         {
             id: 2,
-            title: 'New 2',
-            poston: '14 Mar 2025',
+            lead: 'Dr. Heng Sovannrith',
+            title: 'Smart Home',
             language: 'Khmer',
             display: false
         },
         {
             id: 3,
-            title: 'New 3',
-            poston: '16 Mar 2025',
+            lead: 'Dr. Heng Sovannrith',
+            title: 'Microservice',
             language: 'English',
             display: true
         }
     ]);
 
     const moveItem = (index, direction) => {
-        const newItems = [...new_Items];
+        const newItems = [...researchItems];
         const targetIndex = direction === 'up' ? index - 1 : index + 1;
 
         if (targetIndex < 0 || targetIndex >= newItems.length) return;
 
         [newItems[index], newItems[targetIndex]] = [newItems[targetIndex], newItems[index]];
-        setNew_Items(newItems);
+        setResearchItems(newItems);
     };
 
     const duplicateItem = (index) => {
-        const itemToDuplicate = new_Items[index];
+        const itemToDuplicate = researchItems[index];
 
         const baseTitle = itemToDuplicate.title.replace(/\s\(copy(?:\s\d+)?\)$/i, '');
 
-        const copyCount = new_Items.filter(item =>
+        const copyCount = researchItems.filter(item =>
             item.title.startsWith(baseTitle + ' (copy')
         ).length;
 
@@ -56,9 +56,9 @@ const NewDashboard = () => {
             title: newTitle
         };
 
-        const newItems = [...new_Items];
+        const newItems = [...researchItems];
         newItems.splice(index + 1, 0, newItem);
-        setNew_Items(newItems);
+        setResearchItems(newItems);
     };
 
     return (
@@ -67,10 +67,10 @@ const NewDashboard = () => {
                 <thead className="text-xs text-gray-700  uppercase bg-gray-50 ">
                     <tr>
                         <th scope="col" className="px-6 py-3">
-                            Title
+                            Lead
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Post On
+                            Title
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Language
@@ -84,12 +84,12 @@ const NewDashboard = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {new_Items.map((item, index) => (
+                    {researchItems.map((item, index) => (
                         <tr key={item.id} className="odd:bg-white even:bg-gray-50 border">
-                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                {item.title}
-                            </th>
-                            <td className="px-6 py-4">{item.poston}</td>
+                            <td scope="row" className="pl-6 py-4">
+                                {item.lead}
+                            </td>
+                            <td className="px-6 py-4">{item.title}</td>
                             <td className="px-6 py-4">{item.language}</td>
                             <td className="px-6 py-4">
                                 <span className={`${item.display ? 'bg-blue-100 text-blue-800' : 'bg-red-100 text-red-800'} text-xs font-medium me-2 px-2.5 py-0.5 rounded-xl`}>
@@ -138,4 +138,4 @@ const NewDashboard = () => {
     )
 }
 
-export default NewDashboard
+export default ResearchDashboard

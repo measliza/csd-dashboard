@@ -6,34 +6,34 @@ const EventDashboard = () => {
         {
             id: 1,
             title: 'Event 1',
-            poston: '20 Mar 2025',
+            poston: '12 Mar 2025',
             language: 'English',
             display: true
         },
         {
             id: 2,
             title: 'Event 2',
-            poston: '21 Mar 2025',
+            poston: '14 Mar 2025',
             language: 'Khmer',
             display: false
         },
         {
             id: 3,
             title: 'Event 3',
-            poston: '22 Mar 2025',
+            poston: '16 Mar 2025',
             language: 'English',
             display: true
         }
     ]);
 
     const moveItem = (index, direction) => {
-        const newItems = [...menuItems];
+        const newItems = [...eventItems];
         const targetIndex = direction === 'up' ? index - 1 : index + 1;
 
         if (targetIndex < 0 || targetIndex >= newItems.length) return;
 
         [newItems[index], newItems[targetIndex]] = [newItems[targetIndex], newItems[index]];
-        setMenuItems(newItems);
+        setEventItems(newItems);
     };
 
     const duplicateItem = (index) => {
@@ -70,7 +70,7 @@ const EventDashboard = () => {
                             Title
                         </th>
                         <th scope="col" className="px-6 py-3">
-                            Post on
+                            Post On
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Language
@@ -97,10 +97,10 @@ const EventDashboard = () => {
                                 </span>
                             </td>
                             <td className="px-6 py-4 flex gap-2 items-center relative">
-                                <a href="#" onClick={() => moveItem(index, 'up')} className="font-medium text-gray-900 hover:text-blue-500 hover:underline">
+                                <a onClick={() => moveItem(index, 'up')} className="cursor-pointer font-medium text-gray-900 hover:text-blue-500 hover:underline">
                                     <i className="ti ti-chevron-up text-xl"></i>
                                 </a> |
-                                <a href="#" onClick={() => moveItem(index, 'down')} className="font-medium text-gray-900 hover:text-blue-500 hover:underline">
+                                <a onClick={() => moveItem(index, 'down')} className="cursor-pointer font-medium text-gray-900 hover:text-blue-500 hover:underline">
                                     <i className="ti ti-chevron-down text-xl"></i>
                                 </a> |
                                 <div className="relative">
