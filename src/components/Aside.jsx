@@ -44,7 +44,7 @@ const Aside = () => {
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
                                         location.pathname === '/menu'
                                         ? 'bg-blue-600 text-white'
-                                        : 'text-gray-700 hover:bg-gray-100'
+                                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
                                     >
                                     <i class="ti ti-category-2 text-xl"></i>
@@ -58,7 +58,7 @@ const Aside = () => {
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
                                         location.pathname === '/page'
                                         ? 'bg-blue-600 text-white'
-                                        : 'text-gray-700 hover:bg-gray-100'
+                                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
                                     >
                                     <i class="ti ti-file-description text-xl"></i>
@@ -72,7 +72,7 @@ const Aside = () => {
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
                                         location.pathname === '/faculty'
                                         ? 'bg-blue-600 text-white'
-                                        : 'text-gray-700 hover:bg-gray-100'
+                                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
                                     >
                                     <i class="ti ti-user text-xl"></i>
@@ -86,7 +86,7 @@ const Aside = () => {
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
                                         location.pathname === '/event'
                                         ? 'bg-blue-600 text-white'
-                                        : 'text-gray-700 hover:bg-gray-100'
+                                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
                                     >
                                     <i class="ti ti-speakerphone text-xl"></i>
@@ -100,7 +100,7 @@ const Aside = () => {
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
                                         location.pathname === '/new'
                                         ? 'bg-blue-600 text-white'
-                                        : 'text-gray-700 hover:bg-gray-100'
+                                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
                                     >
                                     <i class="ti ti-news text-xl"></i>
@@ -114,7 +114,7 @@ const Aside = () => {
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
                                         location.pathname === '/career'
                                         ? 'bg-blue-600 text-white'
-                                        : 'text-gray-700 hover:bg-gray-100'
+                                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
                                     >
                                     <i class="ti ti-target-arrow text-xl"></i>
@@ -128,7 +128,7 @@ const Aside = () => {
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
                                         location.pathname === '/scholarship'
                                         ? 'bg-blue-600 text-white'
-                                        : 'text-gray-700 hover:bg-gray-100'
+                                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
                                     >
                                     <i class="ti ti-school text-xl"></i>
@@ -142,7 +142,7 @@ const Aside = () => {
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
                                         location.pathname === '/research'
                                         ? 'bg-blue-600 text-white'
-                                        : 'text-gray-700 hover:bg-gray-100'
+                                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
                                     >
                                     <i class="ti ti-microscope text-xl"></i>
@@ -156,7 +156,7 @@ const Aside = () => {
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
                                         location.pathname === '/researchlab'
                                         ? 'bg-blue-600 text-white'
-                                        : 'text-gray-700 hover:bg-gray-100'
+                                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
                                     >
                                     <i class="ti ti-cell text-xl"></i>
@@ -170,7 +170,7 @@ const Aside = () => {
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
                                         location.pathname === '/feedback'
                                         ? 'bg-blue-600 text-white'
-                                        : 'text-gray-700 hover:bg-gray-100'
+                                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
                                     >
                                     <i class="ti ti-brand-hipchat text-xl"></i>
@@ -184,16 +184,12 @@ const Aside = () => {
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
                                         location.pathname === '/partnership'
                                         ? 'bg-blue-600 text-white'
-                                        : 'text-gray-700 hover:bg-gray-100'
+                                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
                                     >
                                     <i class="ti ti-heart-handshake text-xl"></i>
                                     <span>Partnership</span>
                                 </Link>
-                                {/* <a class="sidebar-link gap-3 py-2 px-3  rounded-md  w-full flex items-center hover:text-blue-600 hover:bg-blue-500" href="#">
-                                    <i class="ti ti-heart-handshake  text-xl"></i>
-                                    <span>Partnership</span>
-                                </a> */}
                             </li>
 
                             <li class="sidebar-item mb-2">
@@ -202,7 +198,7 @@ const Aside = () => {
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
                                         location.pathname === '/image'
                                         ? 'bg-blue-600 text-white'
-                                        : 'text-gray-700 hover:bg-gray-100'
+                                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
                                     >
                                     <i class="ti ti-photo  text-xl"></i>
