@@ -13,6 +13,7 @@ import Scholarship from './pages/scholarship';
 import Research from './pages/Research';
 import Researchlab from './pages/Researchlab';
 import Feedback from './pages/Feedback';
+import Partnership from './pages/Partnership';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <Route path='/research' element={<Research/>} />
         <Route path='/researchlab' element={<Researchlab/>} />
         <Route path='/feedback' element={<Feedback/>} />
+        <Route path='/partnership' element={<Partnership/>} />
 
         <Route path='/image' element={<Image/>} />
         <Route path='/login' element={<Login/>} />
