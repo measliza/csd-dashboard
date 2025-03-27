@@ -42,7 +42,7 @@ const Aside = () => {
                                 <Link
                                     to="/menu"
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
-                                        location.pathname === '/menu'
+                                        location.pathname.startsWith('/menu')
                                         ? 'bg-blue-600 text-white'
                                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
@@ -56,7 +56,7 @@ const Aside = () => {
                                 <Link
                                     to="/page"
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
-                                        location.pathname === '/page'
+                                        location.pathname.startsWith('/page')
                                         ? 'bg-blue-600 text-white'
                                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
@@ -70,7 +70,7 @@ const Aside = () => {
                                 <Link
                                     to="/faculty"
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
-                                        location.pathname === '/faculty'
+                                        location.pathname.startsWith('/faculty')
                                         ? 'bg-blue-600 text-white'
                                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
@@ -84,7 +84,7 @@ const Aside = () => {
                                 <Link
                                     to="/event"
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
-                                        location.pathname === '/event'
+                                        location.pathname.startsWith('/event')
                                         ? 'bg-blue-600 text-white'
                                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
@@ -98,7 +98,7 @@ const Aside = () => {
                                 <Link
                                     to="/new"
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
-                                        location.pathname === '/new'
+                                        location.pathname.startsWith('/new')
                                         ? 'bg-blue-600 text-white'
                                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
@@ -112,7 +112,7 @@ const Aside = () => {
                                 <Link
                                     to="/career"
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
-                                        location.pathname === '/career'
+                                        location.pathname.startsWith('/career')
                                         ? 'bg-blue-600 text-white'
                                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
@@ -126,7 +126,7 @@ const Aside = () => {
                                 <Link
                                     to="/scholarship"
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
-                                        location.pathname === '/scholarship'
+                                        location.pathname.startsWith('/scholarship')
                                         ? 'bg-blue-600 text-white'
                                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
@@ -140,7 +140,7 @@ const Aside = () => {
                                 <Link
                                     to="/research"
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
-                                        location.pathname === '/research'
+                                        location.pathname.startsWith('/research')
                                         ? 'bg-blue-600 text-white'
                                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
@@ -154,7 +154,7 @@ const Aside = () => {
                                 <Link
                                     to="/researchlab"
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
-                                        location.pathname === '/researchlab'
+                                        location.pathname.startsWith('/researchlab')
                                         ? 'bg-blue-600 text-white'
                                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
@@ -168,7 +168,7 @@ const Aside = () => {
                                 <Link
                                     to="/feedback"
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
-                                        location.pathname === '/feedback'
+                                        location.pathname.startsWith('/feedback')
                                         ? 'bg-blue-600 text-white'
                                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
@@ -182,7 +182,7 @@ const Aside = () => {
                                 <Link
                                     to="/partnership"
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
-                                        location.pathname === '/partnership'
+                                        location.pathname.startsWith('/partnership')
                                         ? 'bg-blue-600 text-white'
                                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
@@ -196,7 +196,7 @@ const Aside = () => {
                                 <Link
                                     to="/image"
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
-                                        location.pathname === '/image'
+                                        location.pathname.startsWith('/image')
                                         ? 'bg-blue-600 text-white'
                                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}
