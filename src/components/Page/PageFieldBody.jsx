@@ -4,7 +4,7 @@ import PageSection from './PageSection'
 const PageFieldBody = () => {
     return (
         <div className='px-4'>
-            <div className="flex flex-row gap-4 px-4 py-2">
+            <div className="flex flex-row gap-4 px-4 py-2 mb-1">
                 <div className="flex-1">
                     <label className="block text-xl font-medium leading-6 text-white-900">
                     Title

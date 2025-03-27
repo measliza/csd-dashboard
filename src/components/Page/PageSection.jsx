@@ -3,6 +3,7 @@ import { TbCarouselHorizontal, TbCodeDots } from "react-icons/tb";
 import { CgWebsite } from "react-icons/cg";
 import { LuColumns3 } from "react-icons/lu";
 import CarouselPiece from "./Carousel/CarouselPiece";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const PageSection = () => {
     const [showSection, setShowSection] = useState(false);
@@ -12,7 +13,6 @@ const PageSection = () => {
         setShowSection(!showSection);
     };
 
-    // Handle adding a new section (Carousel, Banner, etc.)
     const handleAddSection = (sectionType) => {
         setSelectedSections([
             ...selectedSections,
@@ -21,35 +21,72 @@ const PageSection = () => {
         setShowSection(false);
     };
 
+    const onDragEnd = (result) => {
+        if (!result.destination) return;
+
+        const newSections = Array.from(selectedSections);
+        const [reorderedItem] = newSections.splice(result.source.index, 1);
+        newSections.splice(result.destination.index, 0, reorderedItem);
+
+        setSelectedSections(newSections);
+    };
+
     return (
         <div>
-            {/* Render dynamically added sections */}
-            {selectedSections.map((section) => (
-                <div key={section.id} className="mb-4">
-                    {section.type === "Carousel" && <CarouselPiece />}
-                    {section.type === "Banner" && (
-                        <div className="bg-gray-100 p-4 rounded-lg">
-                            <h1 className="text-xl font-bold text-center">
-                                Banner Section
-                            </h1>
+            <DragDropContext onDragEnd={onDragEnd}>
+                <Droppable droppableId="sections">
+                    {(provided) => (
+                        <div
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}
+                            className="space-y-4"
+                        >
+                            {selectedSections.map((section, index) => (
+                                <Draggable
+                                    key={section.id.toString()}
+                                    draggableId={section.id.toString()}
+                                    index={index}
+                                >
+                                    {(provided) => (
+                                        <div
+                                            ref={provided.innerRef}
+                                            {...provided.draggableProps}
+                                            {...provided.dragHandleProps}
+                                            className="bg-gray-50 rounded-lg border border-gray-300 mx-4"
+                                        >
+                                            {section.type === "Slideshow" && (
+                                                <CarouselPiece />
+                                            )}
+                                            {section.type === "Banner" && (
+                                                <div className="bg-gray-50 p-2 rounded-lg">
+                                                    <h1 className="text-xl font-bold text-center">
+                                                        Banner Section
+                                                    </h1>
+                                                </div>
+                                            )}
+                                            {section.type === "Service" && (
+                                                <div className="bg-gray-50 p-2 rounded-lg">
+                                                    <h1 className="text-xl font-bold text-center">
+                                                        Service Section
+                                                    </h1>
+                                                </div>
+                                            )}
+                                            {section.type === "Programs" && (
+                                                <div className="bg-gray-50 p-2 rounded-lg">
+                                                    <h1 className="text-xl font-bold text-center">
+                                                        Programs Section
+                                                    </h1>
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
+                                </Draggable>
+                            ))}
+                            {provided.placeholder}
                         </div>
                     )}
-                    {section.type === "Service" && (
-                        <div className="bg-gray-100 p-4 rounded-lg">
-                            <h1 className="text-xl font-bold text-center">
-                                Service Section
-                            </h1>
-                        </div>
-                    )}
-                    {section.type === "Programs" && (
-                        <div className="bg-gray-100 p-4 rounded-lg">
-                            <h1 className="text-xl font-bold text-center">
-                                Programs Section
-                            </h1>
-                        </div>
-                    )}
-                </div>
-            ))}
+                </Droppable>
+            </DragDropContext>
 
             {/* Add new section button */}
             <a
@@ -81,11 +118,11 @@ const PageSection = () => {
                     <div className="grid !grid-cols-1 sm:!grid-cols-2 md:!grid-cols-3 lg:!grid-cols-4 gap-8 p-8">
                         <div
                             className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
-                            onClick={() => handleAddSection("Carousel")}
+                            onClick={() => handleAddSection("Slideshow")}
                         >
                             <TbCarouselHorizontal className="w-24 h-24 mx-auto mt-8" />
                             <h1 className="text-center text-2xl font-medium !mb-8">
-                                Carousel
+                                Slideshow
                             </h1>
                         </div>
 
