@@ -9,7 +9,7 @@ import Faculty from './pages/Faculty';
 import Event from './pages/Event';
 import New from './pages/New';
 import Career from './pages/Career';
-import Scholarship from './pages/scholarship';
+import Scholarship from './pages/Scholarship';
 import Research from './pages/Research';
 import Researchlab from './pages/Researchlab';
 import Feedback from './pages/Feedback';
