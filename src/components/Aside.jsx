@@ -152,9 +152,9 @@ const Aside = () => {
 
                             <li class="sidebar-item mb-2">
                                 <Link
-                                    to="/researchlab"
+                                    to="/lab"
                                     className={`sidebar-link gap-3 px-3 py-2 rounded-md w-full flex items-center ${
-                                        location.pathname.startsWith('/researchlab')
+                                        location.pathname.startsWith('/lab')
                                         ? 'bg-blue-600 text-white'
                                         : 'text-gray-700 hover:text-blue-600 hover:bg-blue-500'
                                     }`}

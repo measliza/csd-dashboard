@@ -31,7 +31,7 @@ function App() {
         <Route path='/career' element={<Career/>} />
         <Route path='/scholarship' element={<Scholarship/>} />
         <Route path='/research' element={<Research/>} />
-        <Route path='/researchlab' element={<Researchlab/>} />
+        <Route path='/lab' element={<Researchlab/>} />
         <Route path='/feedback' element={<Feedback/>} />
         <Route path='/partnership' element={<Partnership/>} />
         <Route path='/image' element={<Image/>} />
