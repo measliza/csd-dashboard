@@ -23,10 +23,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate to="/menu"/>}/>
         <Route path='/menu' element={<Menu/>} />
-
         <Route path='/page' element={<Page/>} />
         <Route path='/page/page-detail' element={<PageField/>} />
-
         <Route path='/faculty' element={<Faculty/>} />
         <Route path='/event' element={<Event/>} />
         <Route path='/new' element={<New/>} />
@@ -36,7 +34,6 @@ function App() {
         <Route path='/researchlab' element={<Researchlab/>} />
         <Route path='/feedback' element={<Feedback/>} />
         <Route path='/partnership' element={<Partnership/>} />
-
         <Route path='/image' element={<Image/>} />
         <Route path='/login' element={<Login/>} />
       </Routes>
