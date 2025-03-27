@@ -1,0 +1,128 @@
+import React, { useState } from "react";
+import { TbCarouselHorizontal, TbCodeDots } from "react-icons/tb";
+import { CgWebsite } from "react-icons/cg";
+import { LuColumns3 } from "react-icons/lu";
+import CarouselPiece from "./Carousel/CarouselPiece";
+
+const PageSection = () => {
+    const [showSection, setShowSection] = useState(false);
+    const [selectedSections, setSelectedSections] = useState([]);
+
+    const handleAddPage = () => {
+        setShowSection(!showSection);
+    };
+
+    // Handle adding a new section (Carousel, Banner, etc.)
+    const handleAddSection = (sectionType) => {
+        setSelectedSections([
+            ...selectedSections,
+            { id: Date.now(), type: sectionType },
+        ]);
+        setShowSection(false);
+    };
+
+    return (
+        <div>
+            {/* Render dynamically added sections */}
+            {selectedSections.map((section) => (
+                <div key={section.id} className="mb-4">
+                    {section.type === "Carousel" && <CarouselPiece />}
+                    {section.type === "Banner" && (
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                            <h1 className="text-xl font-bold text-center">
+                                Banner Section
+                            </h1>
+                        </div>
+                    )}
+                    {section.type === "Service" && (
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                            <h1 className="text-xl font-bold text-center">
+                                Service Section
+                            </h1>
+                        </div>
+                    )}
+                    {section.type === "Programs" && (
+                        <div className="bg-gray-100 p-4 rounded-lg">
+                            <h1 className="text-xl font-bold text-center">
+                                Programs Section
+                            </h1>
+                        </div>
+                    )}
+                </div>
+            ))}
+
+            {/* Add new section button */}
+            <a
+                className={`mx-4 cursor-pointer flex items-center p-3 text-sm font-medium text-blue-600 border-t border ${
+                    showSection ? "rounded-t-lg" : "rounded-lg"
+                } bg-gray-50 hover:bg-gray-100 hover:underline mt-4`}
+                onClick={handleAddPage}
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-6 mr-2 ml-2"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                </svg>
+                Add new section
+            </a>
+
+            {/* Display section options when Add new section is clicked */}
+            {showSection && (
+                <div className="bg-gray-50 h-auto mx-4 border !border-gray-200 rounded-b-lg overflow-y-auto mb-4">
+                    <div className="grid !grid-cols-1 sm:!grid-cols-2 md:!grid-cols-3 lg:!grid-cols-4 gap-8 p-8">
+                        <div
+                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
+                            onClick={() => handleAddSection("Carousel")}
+                        >
+                            <TbCarouselHorizontal className="w-24 h-24 mx-auto mt-8" />
+                            <h1 className="text-center text-2xl font-medium !mb-8">
+                                Carousel
+                            </h1>
+                        </div>
+
+                        <div
+                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
+                            onClick={() => handleAddSection("Banner")}
+                        >
+                            <CgWebsite className="w-24 h-24 mx-auto mt-8" />
+                            <h1 className="text-center text-2xl font-medium !mb-8">
+                                Banner
+                            </h1>
+                        </div>
+
+                        <div
+                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
+                            onClick={() => handleAddSection("Service")}
+                        >
+                            <LuColumns3 className="w-24 h-24 mx-auto mt-8" />
+                            <h1 className="text-center text-2xl font-medium !mb-8">
+                                Service
+                            </h1>
+                        </div>
+
+                        <div
+                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
+                            onClick={() => handleAddSection("Programs")}
+                        >
+                            <TbCodeDots className="w-24 h-24 mx-auto mt-8" />
+                            <h1 className="text-center text-2xl font-medium !mb-8">
+                                Programs
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default PageSection;

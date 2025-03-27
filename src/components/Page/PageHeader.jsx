@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 const PageHeader = () => {
   //   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -66,13 +67,14 @@ const PageHeader = () => {
               </button>
             </div>
             <div className="flex items-center gap-4">
-                <button
+                <Link
+                  to="/page/page-detail"
                 //   onClick={() => setIsModalOpen(true)}
-                  className="bg-blue-600 text-white font-medium px-4 py-2 rounded hover:bg-blue-700"
+                  className="cursor-pointer bg-blue-600 text-white font-medium px-4 py-2 rounded hover:bg-blue-700"
                   aria-current="page"
                 >
                   Add Page
-                </button>
+                </Link>
             </div>
         </nav>
     </header>

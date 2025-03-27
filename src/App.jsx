@@ -14,6 +14,7 @@ import Research from './pages/Research';
 import Researchlab from './pages/Researchlab';
 import Feedback from './pages/Feedback';
 import Partnership from './pages/Partnership';
+import PageField from './components/Page/PageField';
 
 function App() {
 
@@ -22,7 +23,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate to="/menu"/>}/>
         <Route path='/menu' element={<Menu/>} />
+
         <Route path='/page' element={<Page/>} />
+        <Route path='/page/page-detail' element={<PageField/>} />
+
         <Route path='/faculty' element={<Faculty/>} />
         <Route path='/event' element={<Event/>} />
         <Route path='/new' element={<New/>} />
