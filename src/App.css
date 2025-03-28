@@ -51,3 +51,26 @@ body{
 .toggle-switch input:checked+.slider::before {
     transform: translateX(21px);
 }
+
+/* Hide border around Quill editor */
+.ql-container {
+    border: none !important;
+}
+
+/* Hide border around toolbar */
+.ql-toolbar {
+    /* border: none !important; */
+    border-radius: '1px';
+    border-color: rgba(171, 171, 171, 0.3) !important;
+    border-top: transparent !important;
+    border-left: transparent !important;
+    border-right: transparent !important;
+}
+
+/* Make inserted images responsive */
+.ql-editor img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}

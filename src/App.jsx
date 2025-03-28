@@ -15,6 +15,7 @@ import Researchlab from './pages/Researchlab';
 import Feedback from './pages/Feedback';
 import Partnership from './pages/Partnership';
 import PageField from './components/Page/PageField';
+import FacultyField from './components/Faculty/FacultyField';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/page' element={<Page/>} />
         <Route path='/page/page-detail' element={<PageField/>} />
         <Route path='/faculty' element={<Faculty/>} />
+        <Route path='/faculty/faculty-detail' element={<FacultyField/>} />
         <Route path='/event' element={<Event/>} />
         <Route path='/new' element={<New/>} />
         <Route path='/career' element={<Career/>} />
