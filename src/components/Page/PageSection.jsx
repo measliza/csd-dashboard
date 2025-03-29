@@ -4,6 +4,7 @@ import { CgWebsite } from "react-icons/cg";
 import { LuColumns3 } from "react-icons/lu";
 import CarouselPiece from "./Carousel/CarouselPiece";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import BannerPiece from "./Banner/BannerPiece";
 
 const PageSection = () => {
     const [showSection, setShowSection] = useState(false);
@@ -58,11 +59,7 @@ const PageSection = () => {
                                                 <CarouselPiece />
                                             )}
                                             {section.type === "Banner" && (
-                                                <div className="bg-gray-50 p-2 rounded-lg">
-                                                    <h1 className="text-xl font-bold text-center">
-                                                        Banner Section
-                                                    </h1>
-                                                </div>
+                                                <BannerPiece />
                                             )}
                                             {section.type === "Service" && (
                                                 <div className="bg-gray-50 p-2 rounded-lg">

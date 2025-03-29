@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Menu from './pages/Menu';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
