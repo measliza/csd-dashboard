@@ -4,7 +4,6 @@ import FacultyFieldInfo from './FacultyFieldInfo';
 import FacultyFieldContactInfo from './FacultyFieldContactInfo';
 import FacultyFieldSocial from './FacultyFieldSocial';
 import MediaLibraryModal from '../MediaLibraryModal';
-import { API_ENDPOINTS } from "../../service/APIConfig";
 import axios from "axios";
 
 const FacultyFieldBody = () => {
@@ -18,10 +17,9 @@ const FacultyFieldBody = () => {
     };
 
     const handleImageSelect = (imageUrl, field) => {
-        // if (field === "image") {
+        if (field === "image") {
             setSelectedImage(imageUrl ? `${imageUrl}` : "");
-            console.log(`${imageUrl}`);
-        // }
+        }
         setMediaLibraryOpen(false);
     };
 
