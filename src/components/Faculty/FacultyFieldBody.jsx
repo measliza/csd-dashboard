@@ -3,9 +3,21 @@ import FacultyFieldBackground from './FacultyFieldBackground';
 import FacultyFieldInfo from './FacultyFieldInfo';
 import FacultyFieldContactInfo from './FacultyFieldContactInfo';
 import FacultyFieldSocial from './FacultyFieldSocial';
+import MediaLibraryModal from '../MediaLibraryModal';
 
 const FacultyFieldBody = () => {
     const [activeTab, setActiveTab] = useState(1);
+    const [isMediaLibraryOpen, setMediaLibraryOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState("");
+
+    const openMediaLibrary = () => {
+        setMediaLibraryOpen(true);
+    };
+
+    const handleImageSelect = (imageUrl) => {
+        setSelectedImage(imageUrl);
+        setMediaLibraryOpen(false);
+    };
 
     return (
         <div className='px-8 py-2 mb-1'>
@@ -89,44 +101,39 @@ const FacultyFieldBody = () => {
                                     Photo
                                 </label>
                                 <div class="flex items-center justify-center w-full mt-2 border-1">
-                                <label
-                                    for="dropzone-file"
+                                    <label
+                                    onClick={openMediaLibrary}
+                                    // for="dropzone-file"
                                     class="flex flex-col items-center justify-center w-full h-60 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100"
-                                >
-                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                    <svg
-                                        class="w-8 h-8 mb-4 text-gray-500 "
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 20 16"
                                     >
-                                        <path
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                                        />
+                                    {selectedImage ? (
+                                        <img src={selectedImage} alt="Selected" className="h-full w-auto object-contain" />
+                                    ) : (
+                                        <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                                        <svg
+                                            className="w-8 h-8 mb-4 text-gray-500"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 20 16"
+                                        >
+                                            <path
+                                                stroke="currentColor"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                                            />
                                         </svg>
-                                        <p class="mb-2 text-sm text-gray-500 ">
-                                        <span class="font-semibold">
-                                        Click to upload
-                                        </span>{" "}
-                                        or drag and drop
+                                        <p className="mb-2 text-sm text-gray-500">
+                                            <span className="font-semibold">Click to upload image</span>
                                         </p>
-                                        <p class="text-xs text-gray-500">
-                                        SVG, PNG, JPG or GIF{" "}
-                                        </p>
-                                        </div>
-                                        <input
-                                        id="dropzone-file"
-                                        type="file"
-                                        class="hidden"
-                                        />
+                                    </div>
+                                    )}
                                     </label>
                                 </div>
-                            </div>
+                                </div>
+                                {isMediaLibraryOpen && <MediaLibraryModal onSelect={handleImageSelect} onClose={() => setMediaLibraryOpen(false)} />}
 
                             <div className="flex-1">
                                 <label className="block text-xl font-medium leading-6 text-white-900">

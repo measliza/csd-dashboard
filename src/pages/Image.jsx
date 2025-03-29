@@ -1,5 +1,6 @@
 import React from 'react'
 import Aside from '../components/Aside'
+import ImageBody from '../components/Image/ImageBody'
 
 const Image = () => {
   return (
@@ -7,7 +8,7 @@ const Image = () => {
         <Aside/>
 
         <div class=" w-full page-wrapper overflow-hidden">
-            Image
+          <ImageBody/>
         </div>
     </div>
   )
