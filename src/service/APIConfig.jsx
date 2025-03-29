@@ -1,4 +1,4 @@
-const API_BASEURL = "http://54.151.188.108/api";
+const API_BASEURL = "https://54.151.188.108/api";
 
 const API_ENDPOINTS = {
     // text
