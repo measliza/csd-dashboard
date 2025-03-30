@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { TbCarouselHorizontal, TbCodeDots } from "react-icons/tb";
 import { CgWebsite } from "react-icons/cg";
 import { LuColumns3 } from "react-icons/lu";
+import { HiOutlineAcademicCap } from "react-icons/hi2";
 import CarouselPiece from "./Carousel/CarouselPiece";
+import { RiInformationLine } from "react-icons/ri";
+import { LuSchool } from "react-icons/lu";
+import { GrGallery } from "react-icons/gr";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import BannerPiece from "./Banner/BannerPiece";
 
@@ -72,6 +76,34 @@ const PageSection = () => {
                                                 <div className="bg-gray-50 p-2 rounded-lg">
                                                     <h1 className="text-xl font-bold text-center">
                                                         Programs Section
+                                                    </h1>
+                                                </div>
+                                            )}
+                                            {section.type === "Academic" && (
+                                                <div className="bg-gray-50 p-2 rounded-lg">
+                                                    <h1 className="text-xl font-bold text-center">
+                                                        Academic Section
+                                                    </h1>
+                                                </div>
+                                            )}
+                                            {section.type === "Information" && (
+                                                <div className="bg-gray-50 p-2 rounded-lg">
+                                                    <h1 className="text-xl font-bold text-center">
+                                                        Information Section
+                                                    </h1>
+                                                </div>
+                                            )}
+                                            {section.type === "Facilities" && (
+                                                <div className="bg-gray-50 p-2 rounded-lg">
+                                                    <h1 className="text-xl font-bold text-center">
+                                                        Facilities Section
+                                                    </h1>
+                                                </div>
+                                            )}
+                                            {section.type === "Gallery" && (
+                                                <div className="bg-gray-50 p-2 rounded-lg">
+                                                    <h1 className="text-xl font-bold text-center">
+                                                        Gallery Section
                                                     </h1>
                                                 </div>
                                             )}
@@ -150,6 +182,46 @@ const PageSection = () => {
                             <TbCodeDots className="w-24 h-24 mx-auto mt-8" />
                             <h1 className="text-center text-2xl font-medium !mb-8">
                                 Programs
+                            </h1>
+                        </div>
+
+                        <div
+                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
+                            onClick={() => handleAddSection("Academic")}
+                        >
+                            <HiOutlineAcademicCap className="w-24 h-24 mx-auto mt-8" />
+                            <h1 className="text-center text-2xl font-medium !mb-8">
+                                Academic
+                            </h1>
+                        </div>
+
+                        <div
+                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
+                            onClick={() => handleAddSection("Information")}
+                        >
+                            <RiInformationLine className="w-24 h-24 mx-auto mt-8" />
+                            <h1 className="text-center text-2xl font-medium !mb-8">
+                                Information
+                            </h1>
+                        </div>
+
+                        <div
+                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
+                            onClick={() => handleAddSection("Facilities")}
+                        >
+                            <LuSchool className="w-24 h-24 mx-auto mt-8" />
+                            <h1 className="text-center text-2xl font-medium !mb-8">
+                                Facilities
+                            </h1>
+                        </div>
+
+                        <div
+                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
+                            onClick={() => handleAddSection("Gallery")}
+                        >
+                            <GrGallery className="w-24 h-24 mx-auto mt-8" />
+                            <h1 className="text-center text-2xl font-medium !mb-8">
+                                Gallery
                             </h1>
                         </div>
                     </div>
