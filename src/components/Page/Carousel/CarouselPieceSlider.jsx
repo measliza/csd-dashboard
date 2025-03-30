@@ -77,7 +77,7 @@ const CarouselPieceSlider = () => {
         <DragDropContext onDragEnd={onDragEnd}>
             <Droppable droppableId="droppable">
                 {(provided) => (
-                    <div {...provided.droppableProps} ref={provided.innerRef} className='m-4'>
+                    <div {...provided.droppableProps} ref={provided.innerRef} className='mx-4 my-1'>
                         <ul class="h-auto overflow-y-auto border rounded-t-lg mt-1">
                             {slider.map((sliders, index) => (
                                 <Draggable
@@ -387,18 +387,17 @@ const CarouselPieceSlider = () => {
                                                         </div>
                                                     </details>
 
-
-                                                        <div className="flex flex-row items-center w-full gap-4">
-                                                            <label className="block text-xl font-medium leading-6 text-white-900">
-                                                                Display
+                                                    <div className="flex flex-row items-center w-full gap-4">
+                                                        <label className="block text-xl font-medium leading-6 text-white-900">
+                                                            Display
+                                                        </label>
+                                                        <div className="mt-2">
+                                                            <label className="toggle-switch mb-1">
+                                                                <input type="checkbox" />
+                                                                <span className="slider"></span>
                                                             </label>
-                                                            <div className="mt-2">
-                                                                <label className="toggle-switch mb-1">
-                                                                    <input type="checkbox" />
-                                                                    <span className="slider"></span>
-                                                                </label>
-                                                            </div>
                                                         </div>
+                                                    </div>
 
                                                 </div>
                                                 {/* Button 2 */}

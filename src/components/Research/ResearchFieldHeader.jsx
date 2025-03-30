@@ -1,8 +1,12 @@
 import React, {useEffect} from 'react'
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const ResearchHeader = () => {
-    //   const [isModalOpen, setIsModalOpen] = useState(false);
+const ResearchFieldHeader = () => {
+    const navigate = useNavigate();
+
+    const returntoPage = () => {
+        navigate("/research");
+    };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -67,17 +71,26 @@ const ResearchHeader = () => {
                 </button>
                 </div>
                 <div className="flex items-center gap-4">
-                    <Link
-                    to="/research/research-detail"
-                    className="bg-blue-600 text-white font-medium px-4 py-2 rounded hover:bg-blue-700"
-                    aria-current="research"
+                    <button
+                        onClick={() => returntoPage()}
+                        className="cursor-pointer !bg-red-600 !text-gray-100 font-medium px-4 py-2 rounded hover:!bg-red-700"
+                        aria-current="page"
                     >
-                    Add Research
-                    </Link>
+                    Return
+                    </button>
+                </div>
+
+                <div className="flex items-center gap-4">
+                    <button
+                        className="cursor-pointer bg-blue-600 !text-gray-100 font-medium px-4 py-2 rounded hover:bg-blue-700"
+                        aria-current="research"
+                    >
+                    Save
+                    </button>
                 </div>
             </nav>
         </header>
     )
 }
 
-export default ResearchHeader
+export default ResearchFieldHeader

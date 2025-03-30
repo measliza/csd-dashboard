@@ -15,6 +15,7 @@ import Feedback from './pages/Feedback';
 import Partnership from './pages/Partnership';
 import PageField from './components/Page/PageField';
 import FacultyField from './components/Faculty/FacultyField';
+import ResearchField from './components/Research/ResearchField';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
         <Route path='/career' element={<Career/>} />
         <Route path='/scholarship' element={<Scholarship/>} />
         <Route path='/research' element={<Research/>} />
+        <Route path='/research/research-detail' element={<ResearchField/>} />
         <Route path='/lab' element={<Researchlab/>} />
         <Route path='/feedback' element={<Feedback/>} />
         <Route path='/partnership' element={<Partnership/>} />
