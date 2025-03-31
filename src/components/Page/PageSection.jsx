@@ -17,6 +17,7 @@ import { MdOutlineEventAvailable } from "react-icons/md";
 import { TbTax } from "react-icons/tb";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { TbContract } from "react-icons/tb";
+import { MdOutlineSwipeDownAlt } from "react-icons/md";
 import { TbDirections } from "react-icons/tb";
 import { TbTargetArrow } from "react-icons/tb";
 import { LiaChalkboardTeacherSolid } from "react-icons/lia";
@@ -315,6 +316,18 @@ const sectionOptions = [
         ),
         icon: BsExclamationTriangle,
         label: "Important",
+    },
+    {
+        type: "Pyscroll",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Pyscroll Section
+                </h1>
+            </div>
+        ),
+        icon: MdOutlineSwipeDownAlt,
+        label: "Pyscroll",
     },
 ];
 
