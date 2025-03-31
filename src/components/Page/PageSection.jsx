@@ -14,6 +14,10 @@ import { TbBrandCarbon } from "react-icons/tb";
 import { FaComputer } from "react-icons/fa6";
 import { AiOutlineUnlock } from "react-icons/ai";
 import { MdOutlineEventAvailable } from "react-icons/md";
+import { TbTax } from "react-icons/tb";
+import { HiOutlineLightBulb } from "react-icons/hi";
+import { TbContract } from "react-icons/tb";
+import { TbTargetArrow } from "react-icons/tb";
 import { LiaChalkboardTeacherSolid } from "react-icons/lia";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import BannerPiece from "./Banner/BannerPiece";
@@ -198,6 +202,54 @@ const sectionOptions = [
         ),
         icon: MdOutlineEventAvailable,
         label: "Available",
+    },
+    {
+        type: "Fee",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Fee Section
+                </h1>
+            </div>
+        ),
+        icon: TbTax,
+        label: "Fee",
+    },
+    {
+        type: "Requirement",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Requirement Section
+                </h1>
+            </div>
+        ),
+        icon: TbContract,
+        label: "Requirement",
+    },
+    {
+        type: "Future",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Future Section
+                </h1>
+            </div>
+        ),
+        icon: HiOutlineLightBulb,
+        label: "Future",
+    },
+    {
+        type: "Potential",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Potential Section
+                </h1>
+            </div>
+        ),
+        icon: TbTargetArrow,
+        label: "Potential",
     },
 ];
 
