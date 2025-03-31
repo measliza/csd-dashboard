@@ -17,8 +17,13 @@ import { MdOutlineEventAvailable } from "react-icons/md";
 import { TbTax } from "react-icons/tb";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { TbContract } from "react-icons/tb";
+import { TbDirections } from "react-icons/tb";
 import { TbTargetArrow } from "react-icons/tb";
 import { LiaChalkboardTeacherSolid } from "react-icons/lia";
+import { LuBrainCircuit } from "react-icons/lu";
+import { BsExclamationTriangle } from "react-icons/bs";
+import { TfiWrite } from "react-icons/tfi";
+import { RiQuestionnaireLine } from "react-icons/ri";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import BannerPiece from "./Banner/BannerPiece";
 
@@ -250,6 +255,66 @@ const sectionOptions = [
         ),
         icon: TbTargetArrow,
         label: "Potential",
+    },
+    {
+        type: "Introduction",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Introduction Section
+                </h1>
+            </div>
+        ),
+        icon: TbDirections,
+        label: "Introduction",
+    },
+    {
+        type: "Innovation",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Innovation Section
+                </h1>
+            </div>
+        ),
+        icon: LuBrainCircuit,
+        label: "Innovation",
+    },
+    {
+        type: "FAQ",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    FAQ Section
+                </h1>
+            </div>
+        ),
+        icon: RiQuestionnaireLine,
+        label: "FAQ",
+    },
+    {
+        type: "Apply",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Apply Section
+                </h1>
+            </div>
+        ),
+        icon: TfiWrite,
+        label: "Apply",
+    },
+    {
+        type: "Important",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Important Section
+                </h1>
+            </div>
+        ),
+        icon: BsExclamationTriangle,
+        label: "Important",
     },
 ];
 
