@@ -7,6 +7,10 @@ import CarouselPiece from "./Carousel/CarouselPiece";
 import { RiInformationLine } from "react-icons/ri";
 import { LuSchool } from "react-icons/lu";
 import { GrGallery } from "react-icons/gr";
+import { MdAspectRatio } from "react-icons/md";
+import { LuFileType } from "react-icons/lu";
+import { LuMessagesSquare } from "react-icons/lu";
+import { TbBrandCarbon } from "react-icons/tb";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import BannerPiece from "./Banner/BannerPiece";
 
@@ -94,6 +98,54 @@ const sectionOptions = [
         ),
         icon: GrGallery,
         label: "Gallery",
+    },
+    {
+        type: "Specialization",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Specialization Section
+                </h1>
+            </div>
+        ),
+        icon: MdAspectRatio,
+        label: "Specialization",
+    },
+    {
+        type: "Testimonial",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Testimonial Section
+                </h1>
+            </div>
+        ),
+        icon: LuMessagesSquare,
+        label: "Testimonial",
+    },
+    {
+        type: "Type",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Type Section
+                </h1>
+            </div>
+        ),
+        icon: LuFileType,
+        label: "Type",
+    },
+    {
+        type: "Criteria",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Criteria Section
+                </h1>
+            </div>
+        ),
+        icon: TbBrandCarbon,
+        label: "Criteria",
     },
 ];
 
