@@ -11,6 +11,10 @@ import { MdAspectRatio } from "react-icons/md";
 import { LuFileType } from "react-icons/lu";
 import { LuMessagesSquare } from "react-icons/lu";
 import { TbBrandCarbon } from "react-icons/tb";
+import { FaComputer } from "react-icons/fa6";
+import { AiOutlineUnlock } from "react-icons/ai";
+import { MdOutlineEventAvailable } from "react-icons/md";
+import { LiaChalkboardTeacherSolid } from "react-icons/lia";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import BannerPiece from "./Banner/BannerPiece";
 
@@ -146,6 +150,54 @@ const sectionOptions = [
         ),
         icon: TbBrandCarbon,
         label: "Criteria",
+    },
+    {
+        type: "CSD",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    CSD Section
+                </h1>
+            </div>
+        ),
+        icon: FaComputer,
+        label: "CSD",
+    },
+    {
+        type: "Unlock",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Unlock Section
+                </h1>
+            </div>
+        ),
+        icon: AiOutlineUnlock,
+        label: "Unlock",
+    },
+    {
+        type: "Study",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Study Section
+                </h1>
+            </div>
+        ),
+        icon: LiaChalkboardTeacherSolid,
+        label: "Study",
+    },
+    {
+        type: "Avaialable",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Avaialable Section
+                </h1>
+            </div>
+        ),
+        icon: MdOutlineEventAvailable,
+        label: "Available",
     },
 ];
 
