@@ -16,6 +16,7 @@ import Partnership from './pages/Partnership';
 import PageField from './components/Page/PageField';
 import FacultyField from './components/Faculty/FacultyField';
 import ResearchField from './components/Research/ResearchField';
+import EventsField from './components/Event/EventField';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='/faculty' element={<Faculty/>} />
         <Route path='/faculty/faculty-detail' element={<FacultyField/>} />
         <Route path='/event' element={<Event/>} />
+        <Route path='/event/event-detail' element={<EventsField/>} />
         <Route path='/new' element={<New/>} />
         <Route path='/career' element={<Career/>} />
         <Route path='/scholarship' element={<Scholarship/>} />
