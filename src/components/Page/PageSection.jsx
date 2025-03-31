@@ -10,6 +10,93 @@ import { GrGallery } from "react-icons/gr";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import BannerPiece from "./Banner/BannerPiece";
 
+const sectionOptions = [
+    {
+        type: "Slideshow",
+        component: CarouselPiece,
+        icon: TbCarouselHorizontal,
+        label: "Slideshow",
+    },
+    {
+        type: "Banner",
+        component: BannerPiece,
+        icon: CgWebsite,
+        label: "Banner",
+    },
+    {
+        type: "Service",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Service Section
+                </h1>
+            </div>
+        ),
+        icon: LuColumns3,
+        label: "Service",
+    },
+    {
+        type: "Programs",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Programs Section
+                </h1>
+            </div>
+        ),
+        icon: TbCodeDots,
+        label: "Programs",
+    },
+    {
+        type: "Academic",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Academic Section
+                </h1>
+            </div>
+        ),
+        icon: HiOutlineAcademicCap,
+        label: "Academic",
+    },
+    {
+        type: "Information",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Information Section
+                </h1>
+            </div>
+        ),
+        icon: RiInformationLine,
+        label: "Information",
+    },
+    {
+        type: "Facilities",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Facilities Section
+                </h1>
+            </div>
+        ),
+        icon: LuSchool,
+        label: "Facilities",
+    },
+    {
+        type: "Gallery",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Gallery Section
+                </h1>
+            </div>
+        ),
+        icon: GrGallery,
+        label: "Gallery",
+    },
+];
+
 const PageSection = () => {
     const [showSection, setShowSection] = useState(false);
     const [selectedSections, setSelectedSections] = useState([]);
@@ -59,54 +146,12 @@ const PageSection = () => {
                                             {...provided.dragHandleProps}
                                             className="bg-gray-50 rounded-lg border border-gray-300 mx-4"
                                         >
-                                            {section.type === "Slideshow" && (
-                                                <CarouselPiece />
-                                            )}
-                                            {section.type === "Banner" && (
-                                                <BannerPiece />
-                                            )}
-                                            {section.type === "Service" && (
-                                                <div className="bg-gray-50 p-2 rounded-lg">
-                                                    <h1 className="text-xl font-bold text-center">
-                                                        Service Section
-                                                    </h1>
-                                                </div>
-                                            )}
-                                            {section.type === "Programs" && (
-                                                <div className="bg-gray-50 p-2 rounded-lg">
-                                                    <h1 className="text-xl font-bold text-center">
-                                                        Programs Section
-                                                    </h1>
-                                                </div>
-                                            )}
-                                            {section.type === "Academic" && (
-                                                <div className="bg-gray-50 p-2 rounded-lg">
-                                                    <h1 className="text-xl font-bold text-center">
-                                                        Academic Section
-                                                    </h1>
-                                                </div>
-                                            )}
-                                            {section.type === "Information" && (
-                                                <div className="bg-gray-50 p-2 rounded-lg">
-                                                    <h1 className="text-xl font-bold text-center">
-                                                        Information Section
-                                                    </h1>
-                                                </div>
-                                            )}
-                                            {section.type === "Facilities" && (
-                                                <div className="bg-gray-50 p-2 rounded-lg">
-                                                    <h1 className="text-xl font-bold text-center">
-                                                        Facilities Section
-                                                    </h1>
-                                                </div>
-                                            )}
-                                            {section.type === "Gallery" && (
-                                                <div className="bg-gray-50 p-2 rounded-lg">
-                                                    <h1 className="text-xl font-bold text-center">
-                                                        Gallery Section
-                                                    </h1>
-                                                </div>
-                                            )}
+                                            {sectionOptions
+                                                .filter((s) => s.type === section.type)
+                                                .map((s, i) => {
+                                                    const SectionComponent = s.component;
+                                                    return <SectionComponent key={i} />;
+                                                })}
                                         </div>
                                     )}
                                 </Draggable>
@@ -145,85 +190,18 @@ const PageSection = () => {
             {showSection && (
                 <div className="bg-gray-50 h-auto mx-4 border !border-gray-200 rounded-b-lg overflow-y-auto mb-4">
                     <div className="grid !grid-cols-1 sm:!grid-cols-2 md:!grid-cols-3 lg:!grid-cols-4 gap-8 p-8">
-                        <div
-                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
-                            onClick={() => handleAddSection("Slideshow")}
-                        >
-                            <TbCarouselHorizontal className="w-24 h-24 mx-auto mt-8" />
-                            <h1 className="text-center text-2xl font-medium !mb-8">
-                                Slideshow
-                            </h1>
-                        </div>
-
-                        <div
-                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
-                            onClick={() => handleAddSection("Banner")}
-                        >
-                            <CgWebsite className="w-24 h-24 mx-auto mt-8" />
-                            <h1 className="text-center text-2xl font-medium !mb-8">
-                                Banner
-                            </h1>
-                        </div>
-
-                        <div
-                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
-                            onClick={() => handleAddSection("Service")}
-                        >
-                            <LuColumns3 className="w-24 h-24 mx-auto mt-8" />
-                            <h1 className="text-center text-2xl font-medium !mb-8">
-                                Service
-                            </h1>
-                        </div>
-
-                        <div
-                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
-                            onClick={() => handleAddSection("Programs")}
-                        >
-                            <TbCodeDots className="w-24 h-24 mx-auto mt-8" />
-                            <h1 className="text-center text-2xl font-medium !mb-8">
-                                Programs
-                            </h1>
-                        </div>
-
-                        <div
-                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
-                            onClick={() => handleAddSection("Academic")}
-                        >
-                            <HiOutlineAcademicCap className="w-24 h-24 mx-auto mt-8" />
-                            <h1 className="text-center text-2xl font-medium !mb-8">
-                                Academic
-                            </h1>
-                        </div>
-
-                        <div
-                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
-                            onClick={() => handleAddSection("Information")}
-                        >
-                            <RiInformationLine className="w-24 h-24 mx-auto mt-8" />
-                            <h1 className="text-center text-2xl font-medium !mb-8">
-                                Information
-                            </h1>
-                        </div>
-
-                        <div
-                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
-                            onClick={() => handleAddSection("Facilities")}
-                        >
-                            <LuSchool className="w-24 h-24 mx-auto mt-8" />
-                            <h1 className="text-center text-2xl font-medium !mb-8">
-                                Facilities
-                            </h1>
-                        </div>
-
-                        <div
-                            className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
-                            onClick={() => handleAddSection("Gallery")}
-                        >
-                            <GrGallery className="w-24 h-24 mx-auto mt-8" />
-                            <h1 className="text-center text-2xl font-medium !mb-8">
-                                Gallery
-                            </h1>
-                        </div>
+                        {sectionOptions.map((section) => (
+                            <div
+                                key={section.type}
+                                className="cursor-pointer hover:!bg-gray-100 bg-white grid-cols-1 h-auto border rounded-xl"
+                                onClick={() => handleAddSection(section.type)}
+                            >
+                                <section.icon className="w-24 h-24 mx-auto mt-8" />
+                                <h1 className="text-center text-2xl font-medium !mb-8">
+                                    {section.label}
+                                </h1>
+                            </div>
+                        ))}
                     </div>
                 </div>
             )}
