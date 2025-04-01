@@ -5,21 +5,23 @@ import Login from './pages/Login';
 import Image from './pages/Image';
 import Page from './pages/Page';
 import Faculty from './pages/Faculty';
+import FacultyField from './components/Faculty/FacultyField';
 import Event from './pages/Event';
+import EventsField from './components/Event/EventField';
 import New from './pages/New';
+import NewsField from './components/New/NewsField';
 import Career from './pages/Career';
+import CareerField from './components/Career/CareerField';
 import Scholarship from './pages/Scholarship';
+import ScholarshipField from './components/Scholarship/ScholarshipField';
 import Research from './pages/Research';
+import ResearchField from './components/Research/ResearchField';
 import Researchlab from './pages/Researchlab';
+import ResearchlabField from './components/Researchlab/ResearchlabField';
 import Feedback from './pages/Feedback';
+import FeedBackField from './components/Feedback/FeedbackField';
 import Partnership from './pages/Partnership';
 import PageField from './components/Page/PageField';
-import FacultyField from './components/Faculty/FacultyField';
-import ResearchField from './components/Research/ResearchField';
-import EventsField from './components/Event/EventField';
-import NewsField from './components/New/NewsField';
-import CareerField from './components/Career/CareerField';
-import ScholarshipField from './components/Scholarship/ScholarshipField';
 
 function App() {
 
@@ -43,7 +45,9 @@ function App() {
         <Route path='/research' element={<Research/>} />
         <Route path='/research/research-detail' element={<ResearchField/>} />
         <Route path='/lab' element={<Researchlab/>} />
+        <Route path='/lab/researchlab-details' element={<ResearchlabField/>} />
         <Route path='/feedback' element={<Feedback/>} />
+        <Route path='/feedback/feedback-details' element={<FeedBackField/>} />
         <Route path='/partnership' element={<Partnership/>} />
         <Route path='/image' element={<Image/>} />
         <Route path='/login' element={<Login/>} />
