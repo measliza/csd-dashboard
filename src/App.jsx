@@ -17,6 +17,9 @@ import PageField from './components/Page/PageField';
 import FacultyField from './components/Faculty/FacultyField';
 import ResearchField from './components/Research/ResearchField';
 import EventsField from './components/Event/EventField';
+import NewsField from './components/New/NewsField';
+import CareerField from './components/Career/CareerField';
+import ScholarshipField from './components/Scholarship/ScholarshipField';
 
 function App() {
 
@@ -31,9 +34,12 @@ function App() {
         <Route path='/faculty/faculty-detail' element={<FacultyField/>} />
         <Route path='/event' element={<Event/>} />
         <Route path='/event/event-detail' element={<EventsField/>} />
-        <Route path='/new' element={<New/>} />
+        <Route path='/news' element={<New/>} />
+        <Route path='//news/news-details' element={<NewsField />} />
         <Route path='/career' element={<Career/>} />
+        <Route path='/career/career-details' element={<CareerField />} />
         <Route path='/scholarship' element={<Scholarship/>} />
+        <Route path='/scholarship/scholarship-details' element={<ScholarshipField />} />
         <Route path='/research' element={<Research/>} />
         <Route path='/research/research-detail' element={<ResearchField/>} />
         <Route path='/lab' element={<Researchlab/>} />
