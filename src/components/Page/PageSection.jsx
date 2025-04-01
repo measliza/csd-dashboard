@@ -10,6 +10,9 @@ import { GrGallery } from "react-icons/gr";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import BannerPiece from "./Banner/BannerPiece";
 import ServicePiece from "./Service/ServicePiece";
+import ProgramPiece from "./Program/ProgramPiece";
+import AcademicPiece from "./Academic/AcademicPiece";
+import InformationPiece from "./Information/InformationPiece";
 
 const sectionOptions = [
   {
@@ -32,31 +35,19 @@ const sectionOptions = [
   },
   {
     type: "Programs",
-    component: () => (
-      <div className="bg-gray-50 p-2 rounded-lg">
-        <h1 className="text-xl font-bold text-center">Programs Section</h1>
-      </div>
-    ),
+    component: ProgramPiece,
     icon: TbCodeDots,
     label: "Programs",
   },
   {
     type: "Academic",
-    component: () => (
-      <div className="bg-gray-50 p-2 rounded-lg">
-        <h1 className="text-xl font-bold text-center">Academic Section</h1>
-      </div>
-    ),
+    component: AcademicPiece,
     icon: HiOutlineAcademicCap,
     label: "Academic",
   },
   {
     type: "Information",
-    component: () => (
-      <div className="bg-gray-50 p-2 rounded-lg">
-        <h1 className="text-xl font-bold text-center">Information Section</h1>
-      </div>
-    ),
+    component: InformationPiece,
     icon: RiInformationLine,
     label: "Information",
   },
