@@ -63,8 +63,8 @@ const EventsRichText = () => {
       {/* Faculty Info */}
       <div className="flex-1">
 
-        <div className="grid grid-cols-1 gap-4 px-4 py-2">
-          <div className="flex-1">
+        <div className="grid grid-cols-1 gap-4 py-2">
+          <div className="w-full">
             <label className="block text-xl font-medium leading-6 text-white-900">
               Description
             </label>

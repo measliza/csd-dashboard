@@ -55,7 +55,7 @@ const EventsFormSection = () => {
     return (
         <div className="flex justify-center items-center ">
             {/* Left Panel */}
-            <div className="w-full bg-white rounded-lg shadow-md p-2">
+            <div className="w-full bg-white rounded-lg shadow-md py-2">
                 <div className="space-y-4">
                     {/* Tags Input */}
                     <div>
