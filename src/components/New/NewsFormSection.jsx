@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const EventsFormSection = () => {
+const NewsFormSection = () => {
     const [tags, setTags] = useState("");
     const [date, setDate] = useState("");
     const [favorite, setFavorite] = useState("");
@@ -23,7 +23,7 @@ const EventsFormSection = () => {
                 {/* Date Input */}
                 <div className="mt-4">
                     <label htmlFor="event-date" className="block text-xl font-medium text-gray-700">
-                        Event Date
+                        News Date
                     </label>
                     <input
                         type="date"
@@ -52,4 +52,4 @@ const EventsFormSection = () => {
     );
 };
 
-export default EventsFormSection;
+export default NewsFormSection;

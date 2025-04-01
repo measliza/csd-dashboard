@@ -56,10 +56,10 @@ const EventsFieldBody = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="mt-3  ">
+                <div className="mt-4">
                     {/* First row */}
-                    <div className="flex sm:!flex-row flex-col gap-4 items-center py-2 mb-1">
-                        <div className="flex-1">
+                    <div className="flex sm:!flex-row flex-col gap-4 items-center py-2 ">
+                        <div className="flex-1 w-full">
                             <label className="block text-xl font-medium leading-6 text-white-900">
                                 Title
                             </label>
@@ -71,7 +71,7 @@ const EventsFieldBody = () => {
                             </div>
                         </div>
 
-                        <div className="flex-1">
+                        <div className="flex-1 w-full">
                             <label className="block text-xl font-medium leading-6 text-white-900">
                                 Short Title
                             </label>
@@ -83,11 +83,11 @@ const EventsFieldBody = () => {
                             </div>
                         </div>
 
-                        <div className="flex-non">
+                        <div className="flex-non mb-2">
                             <label className="block text-xl font-medium leading-6 text-white-900">
                                 Display
                             </label>
-                            <div className="mt-2">
+                            <div className="mt-1 ">
                                 <label class="toggle-switch mt-2">
                                     <input type="checkbox" />
                                     <span class="slider"></span>
@@ -96,11 +96,11 @@ const EventsFieldBody = () => {
                         </div>
                     </div>
                     {/* Second row */}
-                    <div className="w-full">
-                        <div className="grid grid-cols-1 md:!grid-cols-2 items-center gap-4">
-                            <div className="flex-1">
+                    <div className="w-full my-0 sm:my-6">
+                        <div className="grid  grid-cols-1 md:!grid-cols-2 items-center gap-4">
+                            <div className="">
                                 <label className="block text-xl font-medium leading-6 text-white-900">
-                                    Photo
+                                Image
                                 </label>
                                 <div className="flex items-center justify-center w-full mt-2 border-1">
                                     <label
@@ -181,7 +181,7 @@ const EventsFieldBody = () => {
                                 />
                             )}
 
-                            <div className='flex-1'>
+                            <div className='min-h-full'>
                                 <EventsFormSection />
                             </div>
 

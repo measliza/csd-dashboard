@@ -18,7 +18,7 @@ const config = {
   },
 };
 
-const EventsRichText = () => {
+const NewsRichText = () => {
   const [rotatedStates, setRotatedStates] = useState({});
   const [subtitleContent, setSubtitleContent] = useState('');
   const [info, setInfo] = useState([
@@ -82,4 +82,4 @@ const EventsRichText = () => {
   )
 }
 
-export default EventsRichText
+export default NewsRichText

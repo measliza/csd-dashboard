@@ -1,29 +1,17 @@
 import React, { useState } from "react";
 
-const EventsFormSection = () => {
-    const [tags, setTags] = useState("");
+const CareerFormSection = () => {
     const [date, setDate] = useState("");
     const [favorite, setFavorite] = useState("");
 
     return (
         <div className="flex justify-center items-center">
             <div className="w-full  bg-white space-y-5">
-                {/* Tags Input */}
-                <div>
-                    <label className="block text-xl font-medium text-gray-700">Tags</label>
-                    <input
-                        type="text"
-                        value={tags}
-                        onChange={(e) => setTags(e.target.value)}
-                        className="mt-2 w-full py-2 border !border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                        placeholder="Enter tags"
-                    />
-                </div>
-
+              
                 {/* Date Input */}
-                <div className="mt-4">
+                <div className="">
                     <label htmlFor="event-date" className="block text-xl font-medium text-gray-700">
-                        Event Date
+                        Career Date
                     </label>
                     <input
                         type="date"
@@ -52,4 +40,4 @@ const EventsFormSection = () => {
     );
 };
 
-export default EventsFormSection;
+export default CareerFormSection;
