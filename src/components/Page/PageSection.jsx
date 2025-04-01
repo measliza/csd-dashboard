@@ -7,6 +7,24 @@ import CarouselPiece from "./Carousel/CarouselPiece";
 import { RiInformationLine } from "react-icons/ri";
 import { LuSchool } from "react-icons/lu";
 import { GrGallery } from "react-icons/gr";
+import { MdAspectRatio } from "react-icons/md";
+import { LuFileType } from "react-icons/lu";
+import { LuMessagesSquare } from "react-icons/lu";
+import { TbBrandCarbon } from "react-icons/tb";
+import { FaComputer } from "react-icons/fa6";
+import { AiOutlineUnlock } from "react-icons/ai";
+import { MdOutlineEventAvailable } from "react-icons/md";
+import { TbTax } from "react-icons/tb";
+import { HiOutlineLightBulb } from "react-icons/hi";
+import { TbContract } from "react-icons/tb";
+import { MdOutlineSwipeDownAlt } from "react-icons/md";
+import { TbDirections } from "react-icons/tb";
+import { TbTargetArrow } from "react-icons/tb";
+import { LiaChalkboardTeacherSolid } from "react-icons/lia";
+import { LuBrainCircuit } from "react-icons/lu";
+import { BsExclamationTriangle } from "react-icons/bs";
+import { TfiWrite } from "react-icons/tfi";
+import { RiQuestionnaireLine } from "react-icons/ri";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import BannerPiece from "./Banner/BannerPiece";
 
@@ -94,6 +112,222 @@ const sectionOptions = [
         ),
         icon: GrGallery,
         label: "Gallery",
+    },
+    {
+        type: "Specialization",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Specialization Section
+                </h1>
+            </div>
+        ),
+        icon: MdAspectRatio,
+        label: "Specialization",
+    },
+    {
+        type: "Testimonial",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Testimonial Section
+                </h1>
+            </div>
+        ),
+        icon: LuMessagesSquare,
+        label: "Testimonial",
+    },
+    {
+        type: "Type",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Type Section
+                </h1>
+            </div>
+        ),
+        icon: LuFileType,
+        label: "Type",
+    },
+    {
+        type: "Criteria",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Criteria Section
+                </h1>
+            </div>
+        ),
+        icon: TbBrandCarbon,
+        label: "Criteria",
+    },
+    {
+        type: "CSD",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    CSD Section
+                </h1>
+            </div>
+        ),
+        icon: FaComputer,
+        label: "CSD",
+    },
+    {
+        type: "Unlock",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Unlock Section
+                </h1>
+            </div>
+        ),
+        icon: AiOutlineUnlock,
+        label: "Unlock",
+    },
+    {
+        type: "Study",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Study Section
+                </h1>
+            </div>
+        ),
+        icon: LiaChalkboardTeacherSolid,
+        label: "Study",
+    },
+    {
+        type: "Avaialable",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Avaialable Section
+                </h1>
+            </div>
+        ),
+        icon: MdOutlineEventAvailable,
+        label: "Available",
+    },
+    {
+        type: "Fee",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Fee Section
+                </h1>
+            </div>
+        ),
+        icon: TbTax,
+        label: "Fee",
+    },
+    {
+        type: "Requirement",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Requirement Section
+                </h1>
+            </div>
+        ),
+        icon: TbContract,
+        label: "Requirement",
+    },
+    {
+        type: "Future",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Future Section
+                </h1>
+            </div>
+        ),
+        icon: HiOutlineLightBulb,
+        label: "Future",
+    },
+    {
+        type: "Potential",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Potential Section
+                </h1>
+            </div>
+        ),
+        icon: TbTargetArrow,
+        label: "Potential",
+    },
+    {
+        type: "Introduction",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Introduction Section
+                </h1>
+            </div>
+        ),
+        icon: TbDirections,
+        label: "Introduction",
+    },
+    {
+        type: "Innovation",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Innovation Section
+                </h1>
+            </div>
+        ),
+        icon: LuBrainCircuit,
+        label: "Innovation",
+    },
+    {
+        type: "FAQ",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    FAQ Section
+                </h1>
+            </div>
+        ),
+        icon: RiQuestionnaireLine,
+        label: "FAQ",
+    },
+    {
+        type: "Apply",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Apply Section
+                </h1>
+            </div>
+        ),
+        icon: TfiWrite,
+        label: "Apply",
+    },
+    {
+        type: "Important",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Important Section
+                </h1>
+            </div>
+        ),
+        icon: BsExclamationTriangle,
+        label: "Important",
+    },
+    {
+        type: "Pyscroll",
+        component: () => (
+            <div className="bg-gray-50 p-2 rounded-lg">
+                <h1 className="text-xl font-bold text-center">
+                    Pyscroll Section
+                </h1>
+            </div>
+        ),
+        icon: MdOutlineSwipeDownAlt,
+        label: "Pyscroll",
     },
 ];
 
