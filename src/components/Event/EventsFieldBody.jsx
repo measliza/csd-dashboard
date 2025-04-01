@@ -97,7 +97,7 @@ const EventsFieldBody = () => {
                     </div>
                     {/* Second row */}
                     <div className="w-full">
-                        <div className="grid grid-cols-1 md:!grid-cols-2 items-center gap-4">
+                        <div className="grid grid-cols-1 md:!grid-cols-2 !items-center gap-4">
                             <div className="flex-1">
                                 <label className="block text-xl font-medium leading-6 text-white-900">
                                     Photo
@@ -181,7 +181,7 @@ const EventsFieldBody = () => {
                                 />
                             )}
 
-                            <div className='flex-1'>
+                            <div className=''>
                                 <EventsFormSection />
                             </div>
 
