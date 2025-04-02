@@ -13,6 +13,8 @@ import ServicePiece from "./Service/ServicePiece";
 import ProgramPiece from "./Program/ProgramPiece";
 import AcademicPiece from "./Academic/AcademicPiece";
 import InformationPiece from "./Information/InformationPiece";
+import FacilitiesPiece from "./Facilities/FacilitiesPiece";
+import GalleryPiece from "./Gallery/GalleryPiece";
 
 const sectionOptions = [
   {
@@ -53,21 +55,13 @@ const sectionOptions = [
   },
   {
     type: "Facilities",
-    component: () => (
-      <div className="bg-gray-50 p-2 rounded-lg">
-        <h1 className="text-xl font-bold text-center">Facilities Section</h1>
-      </div>
-    ),
+    component: FacilitiesPiece,
     icon: LuSchool,
     label: "Facilities",
   },
   {
     type: "Gallery",
-    component: () => (
-      <div className="bg-gray-50 p-2 rounded-lg">
-        <h1 className="text-xl font-bold text-center">Gallery Section</h1>
-      </div>
-    ),
+    component: GalleryPiece,
     icon: GrGallery,
     label: "Gallery",
   },
